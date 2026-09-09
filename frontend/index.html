@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ReviewPulse
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/styles.css"
+    >
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+
+</head>
+
+
+<body>
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                ReviewPulse
+            </h1>
+
+            <p>
+                AI-powered review activity forecasting
+            </p>
+
+        </div>
+
+        <div class="model-badge">
+
+            iTransformer
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- Model metrics -->
+
+        <section>
+
+            <h2>
+                Model Performance
+            </h2>
+
+            <div class="metric-grid">
+
+                <div class="metric-card">
+
+                    <span>
+                        MAE
+                    </span>
+
+                    <strong id="mae">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        MASE
+                    </span>
+
+                    <strong id="mase">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        WAPE
+                    </span>
+
+                    <strong id="wape">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        RMSE
+                    </span>
+
+                    <strong id="rmse">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Forecast controls -->
+
+        <section class="panel">
+
+            <div>
+
+                <h2>
+                    Generate Forecast
+                </h2>
+
+                <p class="description">
+                    Select a review series and predict
+                    its activity for the next 24 hours.
+                </p>
+
+            </div>
+
+
+            <div class="controls">
+
+                <div>
+
+                    <label for="seriesSelect">
+                        Series
+                    </label>
+
+                    <select id="seriesSelect">
+
+                        <option>
+                            Loading...
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button id="forecastButton">
+
+                    Generate Forecast
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Loading -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            Running iTransformer inference...
+
+        </div>
+
+
+        <!-- Forecast summary -->
+
+        <section
+            id="forecastSection"
+            class="hidden"
+        >
+
+            <h2 id="forecastTitle">
+                Forecast
+            </h2>
+
+
+            <div class="metric-grid">
+
+                <div class="metric-card">
+
+                    <span>
+                        Current activity
+                    </span>
+
+                    <strong id="currentActivity">
+                        -
+                    </strong>
+
+                    <small>
+                        reviews/hour
+                    </small>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Next 24h total
+                    </span>
+
+                    <strong id="totalForecast">
+                        -
+                    </strong>
+
+                    <small>
+                        predicted reviews
+                    </small>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Average
+                    </span>
+
+                    <strong id="averageForecast">
+                        -
+                    </strong>
+
+                    <small>
+                        reviews/hour
+                    </small>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <span>
+                        Peak activity
+                    </span>
+
+                    <strong id="peakForecast">
+                        -
+                    </strong>
+
+                    <small>
+                        reviews/hour
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="forecastChart">
+                </canvas>
+
+            </div>
+
+
+            <div class="forecast-info">
+
+                <div>
+
+                    <span>
+                        Model
+                    </span>
+
+                    <strong>
+                        iTransformer
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        History
+                    </span>
+
+                    <strong>
+                        168 hours
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Horizon
+                    </span>
+
+                    <strong>
+                        24 hours
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Peak time
+                    </span>
+
+                    <strong id="peakTime">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div
+            id="errorMessage"
+            class="error hidden"
+        >
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        ReviewPulse · iTransformer Time-Series Forecasting
+
+    </footer>
+
+
+    <script src="/static/app.js">
+    </script>
+
+</body>
+
+</html>

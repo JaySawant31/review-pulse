@@ -1,0 +1,30 @@
+{
+  "model": "iTransformer",
+  "model_path": "/content/drive/MyDrive/reviewpulse_models/itransformer",
+  "neuralforecast_version": "3.2.1",
+  "input_size_hours": 168,
+  "forecast_horizon_hours": 24,
+  "rolling_test_hours": 168,
+  "n_test_forecast_origins": 7,
+  "validation_hours": 168,
+  "seasonal_period_hours": 168,
+  "n_series": 235,
+  "training_seconds": 58.631212176999725,
+  "inference_seconds_for_7_rolling_forecasts": 0.43443570900080886,
+  "inference_ms_per_forecast_value": 0.011003943996980974,
+  "saved_artifact_size_mb": 8.254463195800781,
+  "test_metrics": {
+    "MAE": 8.115530467174889,
+    "RMSE": 34.267319104050706,
+    "sMAPE_percent": 58.62343551731421,
+    "WAPE_percent": 18.389054697144978,
+    "MASE": 0.23285547652906863
+  },
+  "seasonal_naive_metrics": {
+    "MAE": 14.430420466058765,
+    "RMSE": 42.01526746435535,
+    "sMAPE_percent": 78.5381681741954,
+    "WAPE_percent": 32.69802169143116,
+    "MASE": 0.42107076913985464
+  }
+}

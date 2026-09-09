@@ -1,0 +1,9 @@
+data/y_amazon-google-large.csv
+
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.DS_Store
+.env
