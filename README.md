@@ -1,6 +1,6 @@
 # ReviewPulse
 
-### Deep Learning–Based Review Activity Forecasting and Deployment Platform
+### A Multivariate Transformer-driven Time-Series Forecasting and Production Deployment Platform
 
 ReviewPulse is an end-to-end deep learning time-series forecasting application that predicts future hourly review activity using a trained **iTransformer** model.
 
