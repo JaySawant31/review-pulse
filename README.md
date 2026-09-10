@@ -931,9 +931,7 @@ This project is distributed under the license included in this repository.
 
 See:
 
-```text
-LICENSE
-```
+[License](https://github.com/JaySawant31/review-pulse?tab=MIT-1-ov-file)
 
 for details.
 
